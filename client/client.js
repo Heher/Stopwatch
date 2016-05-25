@@ -7,7 +7,7 @@ import store, { history } from './store'
 import App from "./components/App"
 import Watch from "./components/Watch"
 
-import css from './css/index.sass'
+require('./css/index.sass')
 
 const router = (
   <Provider store={store}>

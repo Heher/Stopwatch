@@ -5,10 +5,15 @@ import { browserHistory } from 'react-router'
 import rootReducer from './reducers/index'
 
 const defaultState = {
+  timer: {
+    clockTime: 0,
+    lapTime: 0,
+    clockStarted: false
+  }
 }
 
 const enhancers = compose(
-  window.devToolsExtension ? window.devToolsExtension() : f => f
+  window.devToolsExtension ? window.devToolsExtension() : x => x
 )
 
 const store = createStore(rootReducer, defaultState, enhancers)
