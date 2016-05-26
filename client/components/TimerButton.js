@@ -4,7 +4,7 @@ export default class TimerButton extends React.Component {
 
   render() {
     return (
-      <button onClick={this.props.onClick}>{this.props.text}</button>
+      <button className={this.props.type} onClick={this.props.onClick}>{this.props.type.toUpperCase()}</button>
     )
   }
 } 

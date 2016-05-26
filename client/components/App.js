@@ -5,7 +5,9 @@ import Layout from './Layout'
 
 function mapStateToProps(state) {
   return{
-    timer: state.timer
+    timers: state.timers,
+    clock: state.clock,
+    laps: state.laps
   }
 }
 

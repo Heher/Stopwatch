@@ -4,6 +4,7 @@ import Timer from './Timer'
 import TimerButton from './TimerButton'
 
 require('../css/watch.sass')
+require('../css/buttons.sass')
 
 
 export default class Watch extends React.Component {
@@ -41,14 +42,14 @@ export default class Watch extends React.Component {
       <div className="watch">
         <h1>Watch</h1>
         <div className="timers">
-          <Timer {...this.props} type="clock" />
-          <Timer {...this.props} type="laps" />
+          <Timer {...this.props} name="clock" timer={this.props.clock} />
+          <Timer {...this.props} name="laps" timer={this.props.laps} />
         </div>
-        <div className="timer-buttons">
-          <TimerButton onClick={this.start.bind(this)} text="Start" />
-          <TimerButton onClick={this.stop.bind(this)} text="Stop" />
-          <TimerButton onClick={this.reset.bind(this)} text="Reset" />
-          <TimerButton onClick={this.lap.bind(this)} text="Lap" />
+        <div className={`timer-buttons ${this.props.timers.clockStarted ? "started" : "stopped"}`}>
+          <TimerButton {...this.props} onClick={this.start.bind(this)} type="start" />
+          <TimerButton {...this.props} onClick={this.stop.bind(this)} type="stop" />
+          <TimerButton {...this.props} onClick={this.reset.bind(this)} type="reset" />
+          <TimerButton {...this.props} onClick={this.lap.bind(this)} type="lap" />
         </div>
       </div>
     )

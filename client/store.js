@@ -5,10 +5,16 @@ import { browserHistory } from 'react-router'
 import rootReducer from './reducers/index'
 
 const defaultState = {
-  timer: {
-    clockTime: 0,
-    lapTime: 0,
+  timers: {
     clockStarted: false
+  },
+  clock: {
+    time: 0,
+    startTime: 0
+  },
+  laps: {
+    time: 0,
+    startTime: 0
   }
 }
 
