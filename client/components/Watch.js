@@ -28,6 +28,7 @@ export default class Watch extends React.Component {
 
   stop() {
     this.props.stopClock()
+    this.lap()
     this.interval = clearInterval(this.interval)
   }
 
