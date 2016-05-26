@@ -7,7 +7,8 @@ function mapStateToProps(state) {
   return{
     timers: state.timers,
     clock: state.clock,
-    laps: state.laps
+    laps: state.laps,
+    savedLaps: state.savedLaps
   }
 }
 

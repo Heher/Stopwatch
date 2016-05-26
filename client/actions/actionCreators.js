@@ -24,9 +24,10 @@ export function resetClock() {
   }
 }
 
-export function setLap(time) {
+export function setLap(time, lapStartTime) {
   return {
     type: "SET_LAP",
-    time
+    time,
+    lapStartTime
   }
 }

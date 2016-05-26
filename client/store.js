@@ -15,7 +15,8 @@ const defaultState = {
   laps: {
     time: 0,
     startTime: 0
-  }
+  },
+  savedLaps: []
 }
 
 const enhancers = compose(
