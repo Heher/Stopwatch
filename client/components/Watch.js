@@ -43,13 +43,14 @@ export default class Watch extends React.Component {
     return time.length < 2 ? "0" + time : time
   }
 
-  convertTime(time) {
+  convertTime(time, negative = false) {
+    time = negative ? Math.abs(time) : time
     const convertedTime = new Date(time)
     const min = this.addZero(convertedTime.getMinutes().toString())
     const sec = this.addZero(convertedTime.getSeconds().toString())
     const mill = this.addZero(Math.round(convertedTime.getMilliseconds()/10).toString())
 
-    return `${min}:${sec}:${mill}`
+    return negative ? `-${min}:${sec}:${mill}` : `${min}:${sec}:${mill}`
   }
   
   render() {

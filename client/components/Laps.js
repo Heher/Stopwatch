@@ -11,9 +11,9 @@ export default class Laps extends React.Component {
     return (
       <div className="laps">
         <h3>Laps</h3>
-        <ul>
+        <ol>
           {lapsList}
-        </ul>
+        </ol>
       </div>
     )
   }
