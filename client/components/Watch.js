@@ -61,15 +61,17 @@ export default class Watch extends React.Component {
   render() {
     return (
       <div className="watch">
-        <div className="timers">
-          <Timer {...this.props} name="Clock" timer={this.props.clock} convert={this.convertTime.bind(this)}/>
-          <Timer {...this.props} name="Laps" timer={this.props.laps} convert={this.convertTime.bind(this)}/>
-        </div>
-        <div className={`timer-buttons ${this.clockStarted()}`}>
-          <TimerButton {...this.props} onClick={this.start.bind(this)} type="start" />
-          <TimerButton {...this.props} onClick={this.stop.bind(this)} type="stop" />
-          <TimerButton {...this.props} onClick={this.reset.bind(this)} type="reset" />
-          <TimerButton {...this.props} onClick={this.lap.bind(this)} type="lap" />
+        <div className="controls">
+          <div className="timers">
+            <Timer {...this.props} name="Clock" timer={this.props.clock} convert={this.convertTime.bind(this)}/>
+            <Timer {...this.props} name="Laps" timer={this.props.laps} convert={this.convertTime.bind(this)}/>
+          </div>
+          <div className={`timer-buttons ${this.clockStarted()}`}>
+            <TimerButton {...this.props} onClick={this.start.bind(this)} type="start" />
+            <TimerButton {...this.props} onClick={this.stop.bind(this)} type="stop" />
+            <TimerButton {...this.props} onClick={this.reset.bind(this)} type="reset" />
+            <TimerButton {...this.props} onClick={this.lap.bind(this)} type="lap" />
+          </div>
         </div>
         <Laps {...this.props} convert={this.convertTime.bind(this)}/>
       </div>

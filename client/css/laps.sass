@@ -1,26 +1,26 @@
 .laps
   background: #2e4d36
   border-radius: 0 0 5px 5px
+  margin-top: -5px
+  padding: 20px
+  display: none
+  &.lap-set
+    display: block
 
-  ol
-    display: none
-    &.lap-set
-      display: block
+  table
+    width: 100%
     margin: 0
-    padding: 20px
 
-  li
-    display: flex
+  td
     font-family: 'Roboto Mono'
-    list-style: none
     color: #f9f5f8
     font-size: 20px
-    span
-      flex-grow: 2
-      text-align: center
-    span:first-of-type
-      flex-grow: 1
-  li span.split
+    width: 40%
     text-align: right
+    padding-right: 30px
+    &:first-of-type
+      width: 20%
+    &.split
+      text-align: right
     &.negative
       color: #96a69a

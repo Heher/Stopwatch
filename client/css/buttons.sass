@@ -1,5 +1,11 @@
 .timer-buttons
   display: flex
+  border-radius: 0 0 5px 5px
+  button
+    &.start, &.stop
+      border-radius: 0 0 0 5px
+    &.reset, &.lap
+      border-radius: 0 0 5px 0
   &.started
     button
       &.start, &.reset

@@ -10,10 +10,10 @@ export default class Laps extends React.Component {
       return <Lap {...this.props} key={index} i={index} lap={lap} />
     })
     return (
-      <div className="laps">
-        <ol className={lapSetClass}>
+      <div className={`laps ${lapSetClass}`}>
+        <table>
           {lapsList}
-        </ol>
+        </table>
       </div>
     )
   }
