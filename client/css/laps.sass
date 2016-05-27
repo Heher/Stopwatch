@@ -1,7 +1,9 @@
 .laps
-  background: #2e4d36
+  position: relative
+  z-index: 1
+  background: #57705E
   border-radius: 0 0 5px 5px
-  margin-top: -5px
+  box-shadow: 0 5px 20px -5px #17261B
   padding: 20px
   display: none
   &.lap-set
@@ -17,9 +19,11 @@
     font-size: 20px
     width: 40%
     text-align: right
-    padding-right: 30px
+    padding-right: 20px
     &:first-of-type
       width: 20%
+    &:last-of-type
+      padding-right: 0
     &.split
       text-align: right
     &.negative
