@@ -1,13 +1,23 @@
 .timer-buttons
+  display: flex
   &.started
     button
       &.start, &.reset
         display: none
       &.stop, &.lap
-        display: inline-block
+        display: block
   &.stopped
     button
       &.start, &.reset
-        display: inline-block
+        display: block
       &.stop, &.lap
         display: none
+
+  button
+    flex-grow: 1
+    height: 40px
+    font-size: 16px
+    background: #C0C9C2
+    border: 0
+    outline: 0
+    color: #2e4d36

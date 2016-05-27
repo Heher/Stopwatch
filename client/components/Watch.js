@@ -15,6 +15,10 @@ export default class Watch extends React.Component {
     super(props)
   }
 
+  clockStarted() {
+    return this.props.timers.clockStarted ? "started" : "stopped"
+  }
+
   start() {
     this.props.startClock(Date.now())
     this.interval = setInterval(() =>
@@ -57,12 +61,11 @@ export default class Watch extends React.Component {
   render() {
     return (
       <div className="watch">
-        <h1>Watch</h1>
         <div className="timers">
-          <Timer {...this.props} name="clock" timer={this.props.clock} convert={this.convertTime.bind(this)}/>
-          <Timer {...this.props} name="laps" timer={this.props.laps} convert={this.convertTime.bind(this)}/>
+          <Timer {...this.props} name="Clock" timer={this.props.clock} convert={this.convertTime.bind(this)}/>
+          <Timer {...this.props} name="Laps" timer={this.props.laps} convert={this.convertTime.bind(this)}/>
         </div>
-        <div className={`timer-buttons ${this.props.timers.clockStarted ? "started" : "stopped"}`}>
+        <div className={`timer-buttons ${this.clockStarted()}`}>
           <TimerButton {...this.props} onClick={this.start.bind(this)} type="start" />
           <TimerButton {...this.props} onClick={this.stop.bind(this)} type="stop" />
           <TimerButton {...this.props} onClick={this.reset.bind(this)} type="reset" />

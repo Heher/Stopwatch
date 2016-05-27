@@ -1,7 +1,26 @@
 .laps
-  height: 300px
-  h3
-    color: #FFF
+  background: #2e4d36
+  border-radius: 0 0 5px 5px
+
+  ol
+    display: none
+    &.lap-set
+      display: block
+    margin: 0
+    padding: 20px
+
+  li
+    display: flex
+    font-family: 'Roboto Mono'
+    list-style: none
+    color: #f9f5f8
+    font-size: 20px
+    span
+      flex-grow: 2
+      text-align: center
+    span:first-of-type
+      flex-grow: 1
   li span.split
+    text-align: right
     &.negative
-      color: green
+      color: #96a69a

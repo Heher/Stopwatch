@@ -7,7 +7,13 @@ export default class Lap extends React.Component {
     const split = i === 0 ? savedLaps[i] : (savedLaps[i] - savedLaps[i - 1])
     const negativeSplit = split < 0
     return (
-      <li><span>{convert(lap)} - </span><span className={`split ${negativeSplit ? "negative" : ""}`} >{convert(split, negativeSplit)}</span></li>
+      <li>
+        <span>{i + 1}</span>
+        <span>{convert(lap)}</span>
+        <span className={`split ${negativeSplit ? "negative" : ""}`} >
+          {convert(split, negativeSplit)}
+        </span>
+      </li>
     )
   }
 }
