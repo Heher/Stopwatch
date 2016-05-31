@@ -23,7 +23,7 @@ export default class Watch extends React.Component {
     this.props.startClock(Date.now())
     this.interval = setInterval(() =>
       this.tick()
-    )
+    , 1)
   }
 
   tick() {
@@ -53,7 +53,7 @@ export default class Watch extends React.Component {
     const convertedTime = new Date(time)
     const min = this.addZero(convertedTime.getMinutes().toString())
     const sec = this.addZero(convertedTime.getSeconds().toString())
-    const mill = this.addZero(Math.round(convertedTime.getMilliseconds()/10).toString())
+    const mill = this.addZero(Math.floor(convertedTime.getMilliseconds()/10).toString())
 
     return negative ? `-${min}:${sec}:${mill}` : `${min}:${sec}:${mill}`
   }

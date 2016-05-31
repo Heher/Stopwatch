@@ -12,7 +12,9 @@ export default class Laps extends React.Component {
     return (
       <div className={`laps ${lapSetClass}`}>
         <table>
-          {lapsList}
+          <tbody>
+            {lapsList}
+          </tbody>
         </table>
       </div>
     )
